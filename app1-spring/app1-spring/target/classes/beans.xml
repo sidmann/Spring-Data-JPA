@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+<!--  	
+	<bean id = "p1" class = "com.lara.Person">
+		<property name = "firstName" value = "abc"/>
+		<property name = "lastName" value = "xyz"/>
+	</bean>
+	
+	<bean id = "e1" class = "com.lara.Employee">
+		<constructor-arg name = "firstName" value = "Vijay" />
+		<constructor-arg name = "lastName" value = "Thakur" />
+	</bean>
+
+	<bean id = "s1" class = "com.lara.Student" scope = "prototype">
+		<property name = "firstName" value = "Sidhant" />
+		<property name = "lastName" value = "Mann" />
+	</bean>
+	
+	<bean id = "s1" 
+		  class = "com.lara.Student" 
+	      scope = "prototype"
+	      init-method = "test1"
+	      destroy-method = "test2">
+		<property name = "firstName" value = "Sidhant" />
+		<property name = "lastName" value = "Mann" />
+	</bean>
+-->	
+
+	<bean id = "a1" class = "com.lara.Address">
+		<property name="houseNo" value = "123/B"/>
+		<property name="streetName" value = "BTM"/>
+	</bean>
+	
+	<bean id = "address" class = "com.lara.Address">
+		<property name="houseNo" value = "123/C"/>
+		<property name="streetName" value = "BTM2"/>
+	</bean>
+	
+	<bean id = "c1" class = "com.lara.Customer" autowire = "byName">
+		<property name="firstName" value = "Sidhant"/>
+		<property name="lastName" value = "Mann"/>
+<!-- 		<property name="address" ref = "a1"/> -->
+	</bean>
+
+<!--	
+	<bean id = "c1" class = "com.lara.Customer" autowire = "byType">
+		<property name="firstName" value = "Sidhant"/>
+		<property name="lastName" value = "Mann"/>
+	</bean>
+-->
+
+	<bean id = "author" class = "com.lara.Author" autowire = "constructor">
+		<constructor-arg name="firstName" value = "Sidhant"/>
+		<constructor-arg name="lastName" value = "Mann"/>
+	</bean>
+	
+</beans>
